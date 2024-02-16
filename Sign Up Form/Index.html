@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        function PassVerification() {
+            const pass = document.getElementById("pword")
+            const cpass = document.getElementById("conf-pword")
+
+            if (pass == "") {
+                document.getElementById("ErrMsg").innerHTML = "**Password cannot be empty!"
+            }
+            if (pass != cpass) {
+                document.getElementById("ErrMsg").innerHTML = "**Passwords do not match!"
+            }
+            else {
+                document.getElementById("ErrMsg").innerHTML = ""
+            }
+
+        }
+
+    </script>
+
+    <div class="Index">
+        <div class="bg-left">
+            <img class="Pic" src="plant.jpg" alt="Plant">
+            <div class="logo">
+                <img src="odin.png" alt="Odin">
+                <p>ODIN</p>
+            </div>
+        
+        </div>
+        <div class="bg-right">
+            <p class="top-right">
+                This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up NOW to get started.
+                <br><br>
+                You <i>know</i> you want to.
+            </p>
+            <div class="mid-box">
+                <form id="login">
+                    <h1>Let's do this!</h1>
+
+                    <label for="fname">
+                        FIRST NAME
+                        <br>
+                        <input type="text" name="f-name" id="fname" required>
+                    </label>
+                
+                    <label for="lname">
+                        LAST NAME
+                        <br>
+                        <input type="text" name="l-name" id="lname" required>
+                    </label>
+                         
+                    <label for="email">
+                        EMAIL
+                        <br>
+                        <input type="email" name="user-email" id="email" required>
+                    </label>
+                                    
+                    <label for="phone">
+                        PHONE NUMBER
+                        <br>
+                        <input placeholder="+63 - - - - - - - - - -" type="text" name="phon-num" id="phone" pattern="{11,12}" required>
+                    </label>
+                                       
+                    <label for="pword">
+                        PASSWORD
+                        <br>
+                        <input type="password" name="password" id="pword" minlength="4" required>
+                        <p id="ErrMsg"></p>
+                    </label>
+                    
+                    <label for="conf-pword">
+                        CONFIRM PASSWORD
+                        <br>
+                        <input type="password" onfocus="PassVerification()" name="c-password" id="conf-pword" minlength="4" required>
+                    </label>
+                    
+                </form>
+            </div>
+
+            <button type="submit" form="login" onsubmit="PassVerification()"> Create Account</button>
+            <br>
+
+            <p class="bottom">
+                Already have an account? <a href="/Somewhere-else"> Log in</a>
+            </p>
+        
+        </div>
+    </div>
+
+    
+</body>
+</html>
