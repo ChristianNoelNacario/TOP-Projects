@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+.play-area {
+    text-align: center;
+
+}
+
+button {
+    margin: 5rem 5rem 0rem;
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+#Results {
+    margin-top: 5rem;
+    font-weight: 700;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}

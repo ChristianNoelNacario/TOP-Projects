@@ -15,38 +15,77 @@ function getComputerChoice() {
     
 }
 
-function PlayerSelection() {
-    return choice = prompt("What are you choosing?");    
-}
+
+let Pscore = 0;
+let Cscore = 0;
+
 
 function Janken(Player, Computer) {
     Player = Player.toLowerCase();
     Computer = Computer.toLowerCase();
+    const message = document.querySelector('#Results');
+    const Pscore_text = document.querySelector('#PScore');
+    const Cscore_text = document.querySelector('#CScore');
 
     console.log(Computer);
+    console.log(Player);
+
+
     if (["rock", "paper", "scissors"].indexOf(Player) > -1) {
+        if (Pscore >= 5) {
+            message.textContent = "GAME OVER! YOU WIN!";
+            return 
+        }
+        if (Cscore >= 5) {
+            message.textContent = "GAME OVER! COMPUTER WINS!"
+            return
+        }
+        
         if (Player == "paper" && Computer == "rock") {
-            alert("You Win! Paper beats Rock");
+            message.textContent = "You Win! Paper beats Rock";
+            Pscore += 1;
+            console.log(Pscore);
+            Pscore_text.textContent = `Huamn: ${Pscore}`
         }
         else if (Player == "rock" && Computer == "scissors") {
-            alert("You Win! Rock beats Scissors!");
+            message.textContent = "You Win! Rock beats Scissors!";
+            Pscore += 1;
+            Pscore_text.textContent = `Huamn: ${Pscore}`
         }
         else if (Player == "scissors" && Computer == "paper") {
-            alert("You Win! Scissors beats Paper!");
+            message.textContent = "You Win! Scissors beats Paper!";
+            Pscore += 1;
+            Pscore_text.textContent = `Huamn: ${Pscore}`
         }
         else if (Player == Computer) {
-            alert("It is a draw!");
+            message.textContent = "It is a draw!";
         }
         else {
-            alert(`Computer Win! ${Computer} beats ${Player}`);
+            message.textContent = `Computer Win! ${Computer} beats ${Player}`;
+            Cscore += 1;
+            Cscore_text.textContent = `Bitch: ${Cscore}`
         }
     }
     else {
-        alert("I dont think that was a choice...");
+        message.textContent = "I dont think that was a choice...";
     }
 
 }
 
-for (i = 0 ; i <= 5; i++) {
-    Janken(PlayerSelection(), getComputerChoice());
+function PlayerSelection() {
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const Pchoice = button.className;
+            const Computer = getComputerChoice();
+            Janken(Pchoice, Computer);
+    });
+});    
 }
+
+PlayerSelection();
+
+
+
+
