@@ -6,14 +6,29 @@ body {
     background-color: rgba(45, 132, 204, 0.719);
 }
 
+h1 {
+    margin: 20px;
+    font-size: 5rem;
+    text-align: center;
+    font-family: "Micro 5", sans-serif;
+}
 .top {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 button {
+    font-family: "Micro 5", sans-serif;
     margin: 3rem;
+    font-size: 4rem;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+button > h1 {
     font-size: 3rem;
+    text-align: center;
+    font-family: "Micro 5", sans-serif;
 }
 
 .container {
