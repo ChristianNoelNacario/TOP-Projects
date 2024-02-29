@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+}
+
+body {
+    background-color: rgba(45, 132, 204, 0.719);
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    margin: 3rem;
+    font-size: 3rem;
+}
+
+.container {
+    max-width: 960px;
+    max-height: 125px;
+    margin: auto;
+}
+
+.gridRow {
+    display: flex;
+    height: 10px;
+    border: 1px solid black;
+}
+
+.rowCol {
+    width: 25px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.rowCol:hover {
+    background-color: black;
+}
+
